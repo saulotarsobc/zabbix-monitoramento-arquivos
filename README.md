@@ -1,6 +1,8 @@
 # Monitoramento de arquivos e diretórios como Zabbix
 
----
+> Veja como obter os dados de uma pasta no seu Agente Zabbix e tranformar esse dados em um JSON ❤️ para 'monitorarmos' no Zabbix.
+
+![grafana](img/grafana1.png)
 
 ## Como usar?
 
@@ -49,6 +51,8 @@ zabbix_agentd -t folder_files[<folder>,<regex>]
 
 > Ex: zabbix_agentd -t folder_files[/var/www/bkp,ixc]
 
+![exemplo zabbix agent](img/ex%20zabbix%20agent.png)
+
 ---
 
 ## Script
@@ -81,3 +85,38 @@ do
     let ID=ID+1;
 done;
 ```
+
+---
+
+## Zabbix
+
+### Item
+
+> Tipo: Agente Zabbix
+> 
+> Chave: folder_files[/var/www/bkp, ixc]
+> 
+> Tipo de informação: Texto
+
+![zabbix1](img/zabbix1.png)
+
+### Pre-processamento
+
+> Nome: CSC to JSON
+> Parâmetros: | (pipe)
+
+![pre processamento](img/zabbix2.png)
+
+### Teste
+
+![zabbix teste](img/zabbixTeste.png)
+
+> Temos um json 😍❤️
+
+```json
+[{"id":"0","nome":"BKP_CS_2022_01_20-03.14.11.ixc","size":"8370743952","uptime":"642601"},{"id":"1","nome":"BKP_CS_2022_01_21-03.13.33.ixc","size":"8386011856","uptime":"556311"},{"id":"2","nome":"BKP_CS_2022_01_22-03.13.53.ixc","size":"8390696688","uptime":"469758"},{"id":"3","nome":"BKP_CS_2022_01_23-03.13.42.ixc","size":"8393333152","uptime":"383477"},{"id":"4","nome":"BKP_CS_2022_01_25-03.14.08.ixc","size":"8437783888","uptime":"210624"},{"id":"5","nome":"BKP_CS_2022_01_26-03.13.42.ixc","size":"8444700992","uptime":"124238"},{"id":"6","nome":"BKP_CS_2022_01_27-03.13.36.ixc","size":"8432204144","uptime":"37895"}]
+```
+
+## Grafana
+
+![grafana](img/grafana1.png)
