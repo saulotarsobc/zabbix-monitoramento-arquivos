@@ -3,8 +3,10 @@
 ## Como usar?
 
 ```sh
-mkdir /home/scripst
-
+mkdir /home/scripts
+cd /home/scripts
+wget https://raw.githubusercontent.com/saulotarsobc/zabbix-monitoramento-diretorios-arquivos/main/folder_files
+chmod +x folder_files
 ```
 
 ## Script
