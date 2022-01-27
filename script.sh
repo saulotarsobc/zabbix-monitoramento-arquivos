@@ -1,8 +1,3 @@
-# Monitoramento de arquivos e diretórios como Zabbix
-
-## Script
-
-```sh
 #! /bin/bash
 alert(){
     echo -e "./SCRIPT_NAME <DIRECTORY> <['FILE_EXTENSION'(mp3 | mp4 | ixc) | '*'(for all extensions)]>";
@@ -29,4 +24,3 @@ do
     echo "$ID|${names[$ID]}|${sizes[$ID]}|$uptime";
     let ID=ID+1;
 done;
-```
