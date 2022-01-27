@@ -103,6 +103,7 @@ done;
 ### Pre-processamento
 
 > Nome: CSC to JSON
+> 
 > Parâmetros: | (pipe)
 
 ![pre processamento](img/zabbix2.png)
