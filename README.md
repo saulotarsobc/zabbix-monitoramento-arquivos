@@ -1,5 +1,7 @@
 # Monitoramento de arquivos e diretórios como Zabbix
 
+---
+
 ## Como usar?
 
 ```sh
@@ -8,6 +10,46 @@ cd /home/scripts
 wget https://raw.githubusercontent.com/saulotarsobc/zabbix-monitoramento-diretorios-arquivos/main/folder_files
 chmod +x folder_files
 ```
+
+> /home/scripts/folder_files <'/home/folder_name'> <'regex'>
+
+```sh
+/home/scripts/folder_files /var/www/zbxtlg/ *
+```
+
+![exemplos](img/ex1.png)
+
+```sh
+/home/scripts/folder_files /var/www/zbxtlg/ .png
+```
+
+![exemplos](img/ex2.png)
+
+```sh
+/home/scripts/folder_files /var/www/ login
+```
+
+![exemplos](img/ex3.png)
+
+---
+
+## UserParameter
+
+```sh
+nano /etc/zabbix/zabbix_agentd.conf -l
+```
+
+> UserParameter=folder_files[*],/home/scripts/folder_files $1 $2
+
+![user parameters](img/user%20param.png)
+
+```sh
+zabbix_agentd -t folder_files[<folder>,<regex>]
+```
+
+> Ex: zabbix_agentd -t folder_files[/var/www/bkp,ixc]
+
+---
 
 ## Script
 
