@@ -1,5 +1,12 @@
 # Monitoramento de arquivos e diretórios como Zabbix
 
+## Como usar?
+
+```sh
+mkdir /home/scripst
+
+```
+
 ## Script
 
 ```sh
