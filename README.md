@@ -1,4 +1,6 @@
-# Monitoramento de arquivos e diretórios como Zabbix
+# Monitoramento de arquivos e diretórios com Zabbix
+
+## Python e Shell Script
 
 > Veja como obter os dados de uma pasta no seu Agente Zabbix e tranformar esse dados em um JSON ❤️ para 'monitorarmos' no Zabbix.
 

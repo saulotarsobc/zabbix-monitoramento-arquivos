@@ -1,5 +1,7 @@
 #! /usr/bin/python3
-#
+# https://github.com/saulotarsobc/zabbix-monitoramento-arquivos
+# https://t.me/saulos2costa
+
 import os
 import regex
 import sys
