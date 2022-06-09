@@ -16,13 +16,11 @@ if platform.system() == "Linux":
 else:
     pattern = '.*\s.*\s.*\s[0-9]+\s+([0-9]+)\s([0-9]+)\s(.*)'
 
-diretorio = sys.argv[1]
-extensao = sys.argv[2]
 
-
-def getDirList(dire, exte):
+def getDirList(diretorio, extensao):
     final = []
-    comando = "ls {} -ltr --time-style='+%s' | grep {}".format(dire, exte)
+    comando = "ls {} -ltr --time-style='+%s' | grep {}".format(
+        diretorio, extensao)
     res = os.popen(comando).read()
 
     for row in res.split('\n'):
@@ -37,7 +35,7 @@ def getDirList(dire, exte):
 
 
 def main():
-    print(json.dumps(getDirList(diretorio, extensao)))
+    print(json.dumps(getDirList(sys.argv[1], sys.argv[2])))
 
 
 if __name__ == "__main__":
