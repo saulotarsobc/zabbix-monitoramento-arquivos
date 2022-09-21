@@ -16,7 +16,6 @@ if platform.system() == "Linux":
 else:
     pattern = '.*\s.*\s.*\s[0-9]+\s+([0-9]+)\s([0-9]+)\s(.*)'
 
-
 def getDirList(diretorio, extensao):
     final = []
     comando = "ls {} -ltr --time-style='+%s' | grep {}".format(
